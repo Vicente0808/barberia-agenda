@@ -1,0 +1,75 @@
+:root {
+    --gold: #d4af37;
+    --dark: #000000;
+    --gray: #1a1a1a;
+    --text: #ffffff;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: var(--gray);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    width: 350px;
+}
+
+h2 {
+    color: var(--gold);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--gold);
+    font-size: 12px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: var(--gold);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: var(--gold);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #f1c40f;
+}

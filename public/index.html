@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Barber Shop Agenda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h2>💈 Barbería VIP</h2>
+        <form id="formCita">
+            <div class="form-group">
+                <label>CLIENTE</label>
+                <input type="text" id="cliente" required>
+            </div>
+            <div class="form-group">
+                <label>BARBERO</label>
+                <select id="barbero">
+                    <option value="Maestro 1">Maestro 1</option>
+                    <option value="Maestro 2">Maestro 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>FECHA</label>
+                <input type="date" id="fecha" required>
+            </div>
+            <div class="form-group">
+                <label>HORA</label>
+                <input type="time" id="hora" required>
+            </div>
+            <button type="submit">RESERVAR TURNO</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('formCita').onsubmit = async (e) => {
+            e.preventDefault();
+            const data = {
+                cliente: document.getElementById('cliente').value,
+                barbero: document.getElementById('barbero').value,
+                fecha: document.getElementById('fecha').value,
+                hora: document.getElementById('hora').value
+            };
+
+            const response = await fetch('/api/agenda', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+
+            const res = await response.json();
+            alert(res.mensaje || res.error);
+        };
+    </script>
+</body>
+</html>
